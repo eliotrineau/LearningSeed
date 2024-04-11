@@ -1,0 +1,35 @@
+<nav class="flex bg-[#163853] text-white py-4 px-4 gap-4">
+    <a href={{path("app_home")}}>
+        <img src={{asset('media/siteIcon.svg')}} class="h-12 pb-4" />    
+    </a>
+    <div class="mt-1 font-bold">
+        <a class="border-r border-white pr-2" href={{path("app_home")}}>Accueil</a>
+        <a class="ml-2 border-r border-white pr-2" href={{path("app_cours_index")}}>Cours</a>
+        <a class="ml-2 border-r border-white pr-2" href={{path("app_gestion_q_c_m_index")}}>QCM</a>
+        {% if app.user %}
+        <a class="ml-2 border-r border-white pr-2" href={{path("app_gestion_forum_index")}}>Forum</a>
+        {% endif %}
+        <a class="ml-2 border-r border-white pr-2" href={{path("app_login")}}>Connexion</a>
+        <a class="ml-2 border-r border-white pr-2" href={{path("app_register")}}>Inscription</a>
+        {% if app.user %}
+        <a class="ml-2 border-r border-white pr-2" href={{path("app_profil_show")}}>Profil</a>
+        {% endif %}
+        {% if is_granted('ROLE_ADMIN') %}
+            <a class="ml-2 border-r border-white pr-2" href={{path("app_gestion_cours_index")}}>Administration Cours</a>
+            <a class="ml-2 border-r border-white pr-2" href={{path("app_admin_utilisateur_index")}}>Administration Utilisateur</a>
+            <a class="ml-2 border-r border-white pr-2" href={{path("app_gestion_q_c_m_index")}}>Administration QCM</a>
+        {% endif %}
+        {% if app.user %}
+        <a class="ml-2 border-r border-white pr-2" href={{path("app_logout")}}>Deconnexion</a>
+        {% endif %}
+        {% if is_granted('ROLE_ADMIN') %}
+            <button class="ml-2" id="toggleColorButton">
+                <img class="h-4 w-4" src={{asset('media/LDMode.svg')}}>
+            </button>
+        {% else %}
+            <button class="ml-2" id="toggleColorButton">
+                <img class="h-6 w-6" src={{asset('media/LDMode.svg')}}>
+            </button>
+        {% endif%}
+    </div>
+</nav>

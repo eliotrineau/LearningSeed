@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier le QCM{% endblock %}
+
+{% block body %}
+    <div class="flex justify-center">
+        <h1 class="font-bold text-white rounded-xl py-1 my-4 px-2 bg-[#163853]">Modifier QCM</h1>
+    </div>    
+    {{ include('gestion_qcm/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+    <div class="flex justify-center mt-4 mx-96">
+        <a class="rounded-xl text-white mr-4 font-bold py-1 px-2 bg-[#163853]" href="{{ path('app_gestion_q_c_m_save_xml', {'id': q_c_m.id}) }}" class="btn btn-primary">Stocker en XML</a>
+        <a class="rounded-xl text-white mr-4 font-bold py-1 px-2 bg-[#163853]" href="{{ path('app_gestion_q_c_m_index') }}">Retour à la liste des cours</a>
+        {{ include('gestion_qcm/_delete_form.html.twig') }}
+    </div>
+    
+{% endblock %}

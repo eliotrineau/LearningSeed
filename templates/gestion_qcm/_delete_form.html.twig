@@ -1,0 +1,5 @@
+<form method="post" action="{{ path('app_gestion_q_c_m_delete', {'id': q_c_m.id}) }}" onsubmit="return confirm('Voulez-vous vraiment supprimer ce QCM ?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ q_c_m.id) }}">
+    <button class="rounded-xl bg-[#163853] font-bold py-1 px-2 text-white">Supprimer</button>
+</form>
+

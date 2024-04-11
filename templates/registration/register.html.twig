@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+
+    <div class="flex justify-center mt-64">
+        <div class="flex-column bg-[#163853] rounded-xl px-4 py-2">
+            {{ form_errors(registrationForm) }}
+
+            {{ form_start(registrationForm) }}
+                {{ form_label(registrationForm.email, 'Email', {'label_attr': {'class': 'font-bold text-white'}}) }}
+                {{ form_widget(registrationForm.email, {'attr': {'class': 'bg-zinc-300 py-1 px-2 rounded-xl'}}) }}
+
+                {{ form_label(registrationForm.plainPassword, 'Password', {'label_attr': {'class': 'font-bold text-white'}}) }}
+                {{ form_widget(registrationForm.plainPassword, {'attr': {'class': 'bg-zinc-300 py-1 px-2 rounded-xl'}}) }}
+
+                {{ form_label(registrationForm.agreeTerms, 'Agree Terms', {'label_attr': {'class': 'font-bold text-white'}}) }}
+                {{ form_widget(registrationForm.agreeTerms) }}
+
+                <div class="flex justify-center">
+                    <button type="submit" class="rounded-xl font-bold border-2 mt-2 py-1 px-2 text-white">S'inscrire</button>
+                </div>
+            {{ form_end(registrationForm) }}
+        </div>
+    </div>
+{% endblock %}

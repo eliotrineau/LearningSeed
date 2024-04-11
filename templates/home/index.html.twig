@@ -1,0 +1,109 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}LearningSeed{% endblock %}
+
+{% block body %}
+        <section class="flex p-8 gap-4">
+
+        <div class="flex-col w-[800px] mt-2">
+            <div class="bg-[#163853] mb-4 h-[270px] text-xs py-4 px-4 rounded-xl flex-col text-white">
+
+                <h2 class="text-center text-2xl font-bold mb-4">
+                    Pour vos études, choisissez-nous !
+                </h2>
+
+                <div class="flex justify-center gap-8">
+
+                    <div class="flex-col p-2 w-[350px]">
+                        <div class="flex justify-center">
+                            <img class="h-24 w-24" src={{asset('media/moyenne.svg')}} />
+                        </div>
+                        <p class="text-center text-xl font-bold">
+                            En moyenne les élèves aidés par LearningSeed gagnent 2 points sur leur moyenne générale !
+                        </p>
+                    </div>
+    
+                    <div class="flex-col p-2 w-[350px]">
+                        <div class="flex justify-center">
+                            <img class="h-24 w-24" src={{asset('media/outil.svg')}} />
+                        </div>
+                        <p class="text-center text-xl font-bold">
+                            Nous sommes l'outil idéal pour la réussite de vos enfants !
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="bg-[#163853] text-white h-[270px] text-xs py-4 px-4 rounded-xl flex-col">
+                <h2 class="text-center text-2xl font-bold mb-4">
+                    Notre raison : Vous !
+                </h2> 
+                <div class="flex justify-center gap-8">
+
+                    <div class="flex-col p-2">
+                        <div class="flex justify-center">
+                            <img class="h-24 w-24" src={{asset('media/pageIcon.svg')}} />
+                            <img class="h-24 w-24" src={{asset('media/pageIcon.svg')}} />
+                            <img class="h-24 w-24" src={{asset('media/pageIcon.svg')}} />
+
+                        </div>
+                        <p class="text-center font-bold text-xl mt-4">
+                            Rendre l'éducation amusante et ludique !
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex-col rounded-xl text-white py-2 px-4 bg-[#163853] w-[600px] h-[580px] font-bold">
+            <h2 class="text-center text-2xl font-bold mb-4">
+                Des avis étudiants qui comptent !
+            </h2>
+            <div class="p-4 -mt-2">
+                <div class="flex gap-8 mb-12 border-b">
+                    <img class="h-20 w-20 mb-2 rounded-full"src={{asset('media/pageIcon.svg')}} />
+                    <p>
+                        LearningSeed est la meilleure plateforme d'apprentissage que je connaisse !
+                    </p>
+                </div>
+                <div class="flex gap-8 mb-12 border-b">
+                    <img class=" h-20 w-20 mb-2 rounded-full" src={{asset('media/pageIcon.svg')}} />
+                    <p>
+                        Je suis passé d'une moyenne de 9.3 à 12.7 ! J'apprends beaucoup mieux depuis que je fais les QCM de LearningSeed !
+                    </p>
+                </div>
+                <div class="flex gap-8 mb-12 border-b">
+                    <img class=" h-20 w-20 mb-2 rounded-full" src={{asset('media/pageIcon.svg')}} />
+                    <p>
+                        Je trouve que les cours sont bien construits et permettent de bien cerner les différents aspects abordés !
+                    </p>
+                </div>
+                <div class="flex gap-8 mb-12 border-b">
+                    <img class=" h-20 w-20 mb-2 rounded-full" src={{asset('media/pageIcon.svg')}} />
+                    <p>
+                        J'ai beaucoup plus de facilité à retenir mes leçons qu'avant !
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="flex justify-around bg-[#163853] text-white py-4">
+        <div class="flex gap-2 py-2 px-4 border-2 rounded-xl">
+            <a target="_blank" href="https://www.index-education.com/fr/contacts.php">Nous suivre</a>
+        </div>
+        <a target="_blank" href="mailto:pronote@yopmail.com?subject=[Insérer votre objet ici.]&amp;body=[Insérer votre demande ici.]" class="border-2 rounded-xl py-2 px-4">
+            Contact
+        </a>
+        <a target="_blank" href="https://www.index-education.com/fr/mentions-legales.php" class="border-2 rounded-xl py-2 px-4">
+            Mentions légales
+        </a>
+        <a target="_blank" href="https://www.index-education.com/fr/nous-recrutons.php" class="border-2 rounded-xl py-2 px-4">
+            Nous rejoindre
+        </a>
+        <a target="_blank" href="https://www.index-education.com/fr/presentation.php" class="border-2 rounded-xl py-2 px-4">
+            Chiffres clefs
+        </a>
+    </footer>
+{% endblock %}

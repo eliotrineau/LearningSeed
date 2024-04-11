@@ -1,0 +1,79 @@
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="flex justify-center mt-4">
+        <h1 class="font-5xl rounded-xl text-white py-1 px-2 bg-[#163853] my-4 font-bold">Vous jouez le QCM : {{ q_c_m.nomQCM }}</h1>
+    </div>
+    <div class="flex justify-center mx-24">
+        <div class="flex-column rounded-xl py-4 px-8 bg-[#163853]">
+            <div class="flex justify-center">
+                <div class="flex-column">
+                    <div class="flex justify-center text-white my-4">
+                        <div class="mr-12">
+                            <p class="font-bold">Question N°1 : {{ attribute(q_c_m, 'question1') }}</p>
+                            <p>Réponse N°1 : {{ attribute(q_c_m, 'reponse11') }}</p>
+                            <p>Réponse N°2 : {{ attribute(q_c_m, 'reponse12') }}</p>
+                            <p>Réponse N°3 : {{ attribute(q_c_m, 'reponse13') }}</p>
+                            <p>Réponse N°4 : {{ attribute(q_c_m, 'reponse14') }}</p>
+                        </div>
+                        <div class="ml-12">    
+                            <p class="font-bold">Question N°2 : {{ attribute(q_c_m, 'question2') }}</p>
+                            <p>Réponse N°1 : {{ attribute(q_c_m, 'reponse21') }}</p>
+                            <p>Réponse N°2 : {{ attribute(q_c_m, 'reponse22') }}</p>
+                            <p>Réponse N°3 : {{ attribute(q_c_m, 'reponse23') }}</p>
+                            <p>Réponse N°4 : {{ attribute(q_c_m, 'reponse24') }}</p>
+                        </div>
+                    </div>
+                
+                    <div class="flex justify-center text-white my-4">
+                        <div class="mr-12">
+                            <p class="font-bold">Question N°3 : {{ attribute(q_c_m, 'question3') }}</p>
+                            <p>Réponse N°1 : {{ attribute(q_c_m, 'reponse31') }}</p>
+                            <p>Réponse N°2 : {{ attribute(q_c_m, 'reponse32') }}</p>
+                            <p>Réponse N°3 : {{ attribute(q_c_m, 'reponse33') }}</p>
+                            <p>Réponse N°4 : {{ attribute(q_c_m, 'reponse34') }}</p>
+                        </div>
+                        <div class="mx-12">    
+                            <p class="font-bold">Question N°4 : {{ attribute(q_c_m, 'question4') }}</p>
+                            <p>Réponse N°1 : {{ attribute(q_c_m, 'reponse41') }}</p>
+                            <p>Réponse N°2 : {{ attribute(q_c_m, 'reponse42') }}</p>
+                            <p>Réponse N°3 : {{ attribute(q_c_m, 'reponse43') }}</p>
+                            <p>Réponse N°4 : {{ attribute(q_c_m, 'reponse44') }}</p>
+                        </div>
+                        <div class="ml-12">    
+                            <p class="font-bold">Question N°5 : {{ attribute(q_c_m, 'question5') }}</p>
+                            <p>Réponse N°1 : {{ attribute(q_c_m, 'reponse51') }}</p>
+                            <p>Réponse N°2 : {{ attribute(q_c_m, 'reponse52') }}</p>
+                            <p>Réponse N°3 : {{ attribute(q_c_m, 'reponse53') }}</p>
+                            <p>Réponse N°4 : {{ attribute(q_c_m, 'reponse54') }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form method="POST">
+                <div class="flex justify-center">
+                    <div class="flex-column">
+                        <div class="flex">
+                            <input class="mx-4 text-center" placeholder="réponse N°1" type="text" name="answer1" required>
+                            <input class="mx-4 text-center" placeholder="réponse N°2" type="text" name="answer2" required>
+                            <input class="mx-4 text-center" placeholder="réponse N°3" type="text" name="answer3" required>
+                            <input class="mx-4 text-center" placeholder="réponse N°4" type="text" name="answer4" required>
+                            <input class="mx-4 text-center" placeholder="réponse N°5" type="text" name="answer5" required>
+                        </div>
+                        <div class="flex justify-center">
+                            <div class="flex justify-center mr-4">
+                                <button class="rounded-xl py-1 px-2 border-2 text-white my-4 font-bold" type="submit">Soumettre mes réponses</button>
+                            </div>
+                            <div class="flex justify-center ml-4">
+                                <a class="rounded-xl py-1 px-2 border-2 text-white my-4 font-bold" href="{{path('app_gestion_q_c_m_index')}}">Retour à la liste des QCM</a>
+                            </div>
+                        </div>
+                    </div>
+            </form>          
+        </div>
+    </div>
+
+
+    {# Add your form for submitting answers here #}
+{% endblock %}

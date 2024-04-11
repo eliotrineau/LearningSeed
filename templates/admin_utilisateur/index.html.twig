@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Utilisateur (admin){% endblock %}
+
+{% block body %}
+    <div class="flex justify-center">
+        <h1 class="font-bold text-white rounded-xl py-1 my-4 px-2 bg-[#163853]">Liste des utilisateurs :</h1>
+    </div>
+    <a class="ml-24 font-5xl font-bold rounded-xl py-1 px-2 bg-[#163853] text-white" href="{{ path('app_admin_utilisateur_new') }}">Créer un utilisateur</a>
+    {% for user in users %}
+        <a href="{{ path('app_admin_utilisateur_show', {'id': user.id}) }}">
+            <div class="flex justify-center mx-auto h-[350px] w-[400px] border-4 border-[#163853] rounded-lg overflow-hidden group text-white">
+                <img class="h-full w-full scale-[1.4] group-hover:scale-150 bg-[#163853] transition duration-300 ease-in-out object-contain" src={{asset('media/iconUser.jpg')}}>
+                <p class="absolute self-start -mr-80 pb-8 text-2xl drop-shadow-2xl">ID : {{user.id}}</p>
+                <p class="absolute self-end pb-16 text-2xl drop-shadow-2xl">{{user.email}}</p>
+                <p class="absolute self-end pb-8 text-2xl drop-shadow-2xl">{{ user.roles ? user.roles|json_encode : '' }}</p>
+            </div>
+        </a>
+        <div class="flex justify-center">
+            <a class="font-5xl font-bold rounded-xl py-1 px-2 bg-[#163853] my-4 text-white" href="{{ path('app_admin_utilisateur_edit', {'id': user.id}) }}">Modifier</a>
+        </div>
+    {% else %}
+        <p class="font-5xl text-center font-bold">Vous n'avez pas encore d'utilisateur !</p>
+    {% endfor %}
+{% endblock %}

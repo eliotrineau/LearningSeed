@@ -1,0 +1,21 @@
+{# templates/gestion_qcm/score.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="flex justify-center">
+        <h1 class="font-bold text-white rounded-xl py-1 my-4 px-2 bg-[#163853]">QCM : {{ q_c_m.nomQCM }}</h1>
+    </div>
+    {% if score is defined %}
+        <div class="flex justify-center">
+            <div class="bg-[#163853] rounded-xl py-3 px-6 text-white">
+                <p class="font-bold text-5xl">Bravo vous avez eu {{ score }}/5 !</p>
+            </div>
+        </div>
+        <div class="flex justify-center">
+            <a class="mt-4 rounded-xl py-1 px-2 bg-[#163853] text-white font-bold" href="{{path('app_gestion_q_c_m_index')}}">Retour à la liste des QCM</a>
+        </div>
+    {% else %}
+        <p>No score available.</p>
+    {% endif %}
+{% endblock %}

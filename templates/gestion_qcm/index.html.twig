@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}QCM{% endblock %}
+
+{% block body %}
+    <div class="flex justify-center mt-4">
+        <h1 class="font-5xl rounded-xl text-white py-1 px-2 bg-[#163853] my-4 font-bold">Liste des QCM :</h1>
+    </div>
+    {% if is_granted('ROLE_ADMIN') %}
+        <a class="ml-24 font-5xl font-bold rounded-xl py-1 px-2 bg-[#163853] text-white" href="{{ path('app_gestion_q_c_m_new') }}">Créer un QCM</a>
+    {% endif %}
+    {% for q_c_m in q_c_ms %}
+        <div class="my-8">
+            <a href="{{ path('app_gestion_q_c_m_show', {'id': q_c_m.id}) }}">
+                <div class="flex justify-center mx-auto h-[350px] w-[400px] border-4 border-[#163853] bg-[#163853] rounded-lg overflow-hidden group text-white">
+                    <img class="h-full w-full scale-[0.8] group-hover:scale-100 pb-24 transition duration-300 ease-in-out object-contain" src={{asset('media/qcm.svg')}}>
+                    <p class="absolute self-start -mr-40 pb-8 text-2xl drop-shadow-2xl">dernier score : {{q_c_m.score}}/5</p>
+                    <p class="absolute self-end pb-20 text-2xl drop-shadow-2xl">5 questions</p>
+                    <p class="absolute self-end pb-12 text-2xl drop-shadow-2xl">{{q_c_m.nomQCM}}</p>
+                    <p class="absolute self-end pb-4 text-2xl drop-shadow-2xl">{{q_c_m.niveau}}
+                        {% if app.user.niveau == q_c_m.niveau %}
+                            : conseillé
+                        {% endif %}
+                    </p>
+                </div>
+            </a>
+        </div>
+        {% if is_granted('ROLE_ADMIN') %}
+            <div class="flex justify-center">
+                <a class="font-5xl font-bold rounded-xl py-1 px-2 bg-[#163853] text-white my-4" href="{{ path('app_gestion_q_c_m_edit', {'id': q_c_m.id}) }}">Modifier</a>
+         </div>
+        {% endif %}
+    {% else %}
+        <p class="font-5xl text-center font-bold">Il n'y a pas encore de QCM !</p>
+    {% endfor %}
+{% endblock %}

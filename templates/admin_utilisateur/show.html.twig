@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Utilisateur (admin){% endblock %}
+
+{% block body %}
+    <div class="flex justify-center">
+        <h1 class="font-bold text-white rounded-xl py-1 my-4 px-2 bg-[#163853]">Détails de l'utilisateur</h1>
+    </div>
+    <div class="flex justify-center">
+        <table class="table border-4 border-[#163853] mt-12 mx-24 rounded-xl">
+            <tbody>
+                <tr>
+                    <th>ID</th>
+                    <td>{{ user.id }}</td>
+                </tr>   
+                <tr>
+                    <th>Email</th>
+                    <td>{{ user.email }}</td>
+                </tr>
+                <tr>
+                    <th>Rôle</th>
+                    <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+                </tr>
+                <tr>
+                    <th>Mot de passe</th>
+                    <td>{{ user.password }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="flex justify-center">
+        <div class="font-bold font-5xl text-center flex justify-end gap-4 mx-24 mt-4">
+            <a class="bg-[#163853] rounded-xl px-2 py-1 text-white" href="{{ path('app_admin_utilisateur_index') }}">Retour à la liste des utilisateurs</a>
+            <a class="bg-[#163853] rounded-xl px-2 py-1 text-white" href="{{ path('app_admin_utilisateur_edit', {'id': user.id}) }}">Modifier</a>
+            {{ include('admin_utilisateur/_delete_form.html.twig') }}
+        </div>
+    </div>
+{% endblock %}

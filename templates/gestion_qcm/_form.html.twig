@@ -1,0 +1,62 @@
+{{ form_start(form) }}
+    <div class="flex justify-center mt-4 rounded-xl bg-[#163853] py-2 px-4 mx-24">
+        <div class="flex-column">
+            <div class="flex justify-center -mx-32 ml-24 mb-8">
+                {{ form_row(form.nomQCM, {'attr': {'class': 'bg-zinc-300 rounded-xl text-center py-1 mb-2 ml-2 mr-4'}}) }}
+                {{ form_row(form.score, {'attr': {'class': 'bg-zinc-300 rounded-xl text-center py-1 mb-2 ml-2 mr-4'}}) }}
+                {{ form_row(form.niveau, {'attr': {'class': 'bg-zinc-300 rounded-xl text-center py-1 mb-2 ml-2'}}) }}
+                <div class="ml-32">
+                    <button class="rounded-xl text-white border-2 py-1 px-2">{{ button_label|default('Enregistrer') }}</button>
+                </div>
+            </div>
+            <div class="flex justify-center mb-8">
+                <div class="flex-column mr-4">
+                    {{ form_row(form.question_1, {'attr': {'class': 'bg-zinc-300 rounded-xl text-center py-1 mb-2 ml-2'}}) }}
+                    {{ form_row(form.reponse_1_1, {'attr': {'class': 'bg-zinc-300 rounded-xl text-center py-1 mb-2 ml-2'}}) }}
+                    {{ form_row(form.reponse_1_2, {'attr': {'class': 'bg-zinc-300 rounded-xl text-center py-1 mb-2 ml-2'}}) }}
+                    {{ form_row(form.reponse_1_3, {'attr': {'class': 'bg-zinc-300 rounded-xl text-center py-1 mb-2 ml-2'}}) }}
+                    {{ form_row(form.reponse_1_4, {'attr': {'class': 'bg-zinc-300 rounded-xl text-center py-1 mb-2 ml-2'}}) }}
+                </div>
+                <div class="flex-column ml-4">
+                    {{ form_row(form.question_2, {'attr': {'class': 'bg-zinc-300 rounded-xl text-center py-1 mb-2 ml-2'}}) }}
+                    {{ form_row(form.reponse_2_1, {'attr': {'class': 'bg-zinc-300 rounded-xl text-center py-1 mb-2 ml-2'}}) }}
+                    {{ form_row(form.reponse_2_2, {'attr': {'class': 'bg-zinc-300 rounded-xl text-center py-1 mb-2 ml-2'}}) }}
+                    {{ form_row(form.reponse_2_3, {'attr': {'class': 'bg-zinc-300 rounded-xl text-center py-1 mb-2 ml-2'}}) }}
+                    {{ form_row(form.reponse_2_4, {'attr': {'class': 'bg-zinc-300 rounded-xl text-center py-1 mb-2 ml-2'}}) }}
+                </div>
+            </div>
+            <div class="flex justify-center mb-8">
+                <div class="flex-column mr-4">
+                    {{ form_row(form.question_3, {'attr': {'class': 'bg-zinc-300 rounded-xl text-center py-1 mb-2 ml-2'}}) }}
+                    {{ form_row(form.reponse_3_1, {'attr': {'class': 'bg-zinc-300 rounded-xl text-center py-1 mb-2 ml-2'}}) }}
+                    {{ form_row(form.reponse_3_2, {'attr': {'class': 'bg-zinc-300 rounded-xl text-center py-1 mb-2 ml-2'}}) }}
+                    {{ form_row(form.reponse_3_3, {'attr': {'class': 'bg-zinc-300 rounded-xl text-center py-1 mb-2 ml-2'}}) }}
+                    {{ form_row(form.reponse_3_4, {'attr': {'class': 'bg-zinc-300 rounded-xl text-center py-1 mb-2 ml-2'}}) }}
+                </div>
+                <div class="flex-column mx-4">
+                    {{ form_row(form.question_4, {'attr': {'class': 'bg-zinc-300 rounded-xl text-center py-1 mb-2 ml-2'}}) }}
+                    {{ form_row(form.reponse_4_1, {'attr': {'class': 'bg-zinc-300 rounded-xl text-center py-1 mb-2 ml-2'}}) }}
+                    {{ form_row(form.reponse_4_2, {'attr': {'class': 'bg-zinc-300 rounded-xl text-center py-1 mb-2 ml-2'}}) }}
+                    {{ form_row(form.reponse_4_3, {'attr': {'class': 'bg-zinc-300 rounded-xl text-center py-1 mb-2 ml-2'}}) }}
+                    {{ form_row(form.reponse_4_4, {'attr': {'class': 'bg-zinc-300 rounded-xl text-center py-1 mb-2 ml-2'}}) }}
+                </div>
+                <div class="flex-column ml-4">
+                    {{ form_row(form.question_5, {'attr': {'class': 'bg-zinc-300 rounded-xl text-center py-1 mb-2 ml-2'}}) }}
+                    {{ form_row(form.reponse_5_1, {'attr': {'class': 'bg-zinc-300 rounded-xl text-center py-1 mb-2 ml-2'}}) }}
+                    {{ form_row(form.reponse_5_2, {'attr': {'class': 'bg-zinc-300 rounded-xl text-center py-1 mb-2 ml-2'}}) }}
+                    {{ form_row(form.reponse_5_3, {'attr': {'class': 'bg-zinc-300 rounded-xl text-center py-1 mb-2 ml-2'}}) }}
+                    {{ form_row(form.reponse_5_4, {'attr': {'class': 'bg-zinc-300 rounded-xl text-center py-1 mb-2 ml-2'}}) }}
+                </div>   
+            </div>
+            <div class="flex justify-center">
+                <div>
+                    {{ form_row(form.correctAnswer_1, {'attr': {'class': 'bg-zinc-300 rounded-xl text-center py-1 mb-2 ml-2'}}) }}
+                    {{ form_row(form.correctAnswer_2, {'attr': {'class': 'bg-zinc-300 rounded-xl text-center py-1 mb-2 ml-2'}}) }}
+                    {{ form_row(form.correctAnswer_3, {'attr': {'class': 'bg-zinc-300 rounded-xl text-center py-1 mb-2 ml-2'}}) }}
+                    {{ form_row(form.correctAnswer_4, {'attr': {'class': 'bg-zinc-300 rounded-xl text-center py-1 mb-2 ml-2'}}) }}
+                    {{ form_row(form.correctAnswer_5, {'attr': {'class': 'bg-zinc-300 rounded-xl text-center py-1 mb-2 ml-2'}}) }}
+                </div>
+            </div> 
+        </div>    
+    </div>
+{{ form_end(form) }}

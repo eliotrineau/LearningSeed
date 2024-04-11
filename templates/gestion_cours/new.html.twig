@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer Cours{% endblock %}
+
+{% block body %}
+    <div class="flex justify-center">
+        <h1 class="font-bold text-white rounded-xl py-1 my-4 px-2 bg-[#163853]">Créer cours</h1>
+    </div>    
+    <div class="flex justify-center mt-4 rounded-xl bg-[#163853] py-2 px-4 mx-96">
+        {{ include('gestion_cours/_form.html.twig') }}
+    </div>
+    <div class="flex justify-center mx-96">
+        <a class="rounded-xl text-white mt-4 font-bold py-1 px-2 bg-[#163853]" href="{{ path('app_gestion_cours_index') }}s">Retour à la liste des cours</a>
+    </div>
+{% endblock %}

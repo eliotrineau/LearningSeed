@@ -1,0 +1,139 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}QCM{% endblock %}
+
+{% block body %}
+    <div class="flex justify-center">
+        <h1 class="font-bold text-white rounded-xl py-1 my-4 px-2 bg-[#163853]">QCM</h1>
+    </div>
+    <div class="flex justify-center mt-4 rounded-xl bg-[#163853] py-2 px-4 mx-24">
+        <div class="flex-column">
+            <div class="flex justify-center -mx-32 ml-24 mb-8">
+                {% if is_granted('ROLE_ADMIN') %}
+                    <p class="font-bold text-white mr-12">Nom du QCM : {{q_c_m.nomQCM}}</p>
+                    <p class="font-bold text-white">Votre score : {{q_c_m.score}}</p>
+                    <div class="ml-52">
+                        <button class="rounded-xl text-white border-2 py-1 px-2">{{ button_label|default('Enregistrer') }}</button>
+                    </div>
+                {% else %}
+                    <p class="font-bold text-white mr-12">Nom du QCM : {{q_c_m.nomQCM}}</p>
+                    <p class="font-bold text-white mr-60">Votre score : {{q_c_m.score}}</p>
+                    <div class="ml-52" hidden>
+                        <button class="rounded-xl text-white border-2 py-1 px-2">{{ button_label|default('Enregistrer') }}</button>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="flex justify-center mb-8">
+                <div class="flex-column mr-4">
+                    <p class="font-bold text-white mb-4">Question N°1 : {{ q_c_m.question1}}</p>
+                    <div class="flex">
+                        <p class="mr-4 text-white font-bold">Réponse N°1 :</p>
+                        <p class="bg-zinc-300 rounded-xl text-center px-6 py-1 mb-2 ml-2">{{ q_c_m.reponse11 }}</p>
+                    </div>
+                    <div class="flex">
+                        <p class="mr-4 text-white font-bold">Réponse N°2 :</p>
+                        <p class="bg-zinc-300 rounded-xl text-center px-6 py-1 mb-2 ml-2">{{ q_c_m.reponse12 }}</p>
+                    </div>
+                    <div class="flex">
+                        <p class="mr-4 text-white font-bold">Réponse N°3 :</p>
+                        <p class="bg-zinc-300 rounded-xl text-center px-6 py-1 mb-2 ml-2">{{ q_c_m.reponse13 }}</p>
+                    </div>
+                    <div class="flex">
+                        <p class="mr-4 text-white font-bold">Réponse N°4 :</p>
+                        <p class="bg-zinc-300 rounded-xl text-center px-6 py-1 mb-2 ml-2">{{ q_c_m.reponse14 }}</p>
+                    </div>
+                </div>
+                <div class="flex-column ml-4">
+                    <p class="font-bold text-white mb-4">Question N°1 : {{ q_c_m.question2}}</p>
+                    <div class="flex">
+                        <p class="mr-4 text-white font-bold">Réponse N°1 :</p>
+                        <p class="bg-zinc-300 rounded-xl text-center px-6 py-1 mb-2 ml-2">{{ q_c_m.reponse21 }}</p>
+                    </div>
+                    <div class="flex">
+                        <p class="mr-4 text-white font-bold">Réponse N°2 :</p>
+                        <p class="bg-zinc-300 rounded-xl text-center px-6 py-1 mb-2 ml-2">{{ q_c_m.reponse22 }}</p>
+                    </div>
+                    <div class="flex">
+                        <p class="mr-4 text-white font-bold">Réponse N°3 :</p>
+                        <p class="bg-zinc-300 rounded-xl text-center px-6 py-1 mb-2 ml-2">{{ q_c_m.reponse23 }}</p>
+                    </div>
+                    <div class="flex">
+                        <p class="mr-4 text-white font-bold">Réponse N°4 :</p>
+                        <p class="bg-zinc-300 rounded-xl text-center px-6 py-1 mb-2 ml-2">{{ q_c_m.reponse24 }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center mb-8">
+                <div class="flex-column mr-4">
+                    <p class="font-bold text-white mb-4">Question N°1 : {{ q_c_m.question3}}</p>
+                    <div class="flex">
+                        <p class="mr-4 text-white font-bold">Réponse N°1 :</p>
+                        <p class="bg-zinc-300 rounded-xl text-center px-6 py-1 mb-2 ml-2">{{ q_c_m.reponse31 }}</p>
+                    </div>
+                    <div class="flex">
+                        <p class="mr-4 text-white font-bold">Réponse N°2 :</p>
+                        <p class="bg-zinc-300 rounded-xl text-center px-6 py-1 mb-2 ml-2">{{ q_c_m.reponse32 }}</p>
+                    </div>
+                    <div class="flex">
+                        <p class="mr-4 text-white font-bold">Réponse N°3 :</p>
+                        <p class="bg-zinc-300 rounded-xl text-center px-6 py-1 mb-2 ml-2">{{ q_c_m.reponse33 }}</p>
+                    </div>
+                    <div class="flex">
+                        <p class="mr-4 text-white font-bold">Réponse N°4 :</p>
+                        <p class="bg-zinc-300 rounded-xl text-center px-6 py-1 mb-2 ml-2">{{ q_c_m.reponse34 }}</p>
+                    </div>
+                </div>
+                <div class="flex-column mx-4">
+                <p class="font-bold text-white mb-4">Question N°1 : {{ q_c_m.question4}}</p>
+                    <div class="flex">
+                        <p class="mr-4 text-white font-bold">Réponse N°1 :</p>
+                        <p class="bg-zinc-300 rounded-xl text-center px-6 py-1 mb-2 ml-2">{{ q_c_m.reponse41 }}</p>
+                    </div>
+                    <div class="flex">
+                        <p class="mr-4 text-white font-bold">Réponse N°2 :</p>
+                        <p class="bg-zinc-300 rounded-xl text-center px-6 py-1 mb-2 ml-2">{{ q_c_m.reponse42 }}</p>
+                    </div>
+                    <div class="flex">
+                        <p class="mr-4 text-white font-bold">Réponse N°3 :</p>
+                        <p class="bg-zinc-300 rounded-xl text-center px-6 py-1 mb-2 ml-2">{{ q_c_m.reponse43 }}</p>
+                    </div>
+                    <div class="flex">
+                        <p class="mr-4 text-white font-bold">Réponse N°4 :</p>
+                        <p class="bg-zinc-300 rounded-xl text-center px-6 py-1 mb-2 ml-2">{{ q_c_m.reponse44 }}</p>
+                    </div>
+                </div>
+                <div class="flex-column ml-4">
+                    <p class="font-bold text-white mb-4">Question N°5 : {{ q_c_m.question5}}</p>
+                    <div class="flex">
+                        <p class="mr-4 text-white font-bold">Réponse N°1 :</p>
+                        <p class="bg-zinc-300 rounded-xl text-center px-6 py-1 mb-2 ml-2">{{ q_c_m.reponse51 }}</p>
+                    </div>
+                    <div class="flex">
+                        <p class="mr-4 text-white font-bold">Réponse N°2 :</p>
+                        <p class="bg-zinc-300 rounded-xl text-center px-6 py-1 mb-2 ml-2">{{ q_c_m.reponse52 }}</p>
+                    </div>
+                    <div class="flex">
+                        <p class="mr-4 text-white font-bold">Réponse N°3 :</p>
+                        <p class="bg-zinc-300 rounded-xl text-center px-6 py-1 mb-2 ml-2">{{ q_c_m.reponse53 }}</p>
+                    </div>
+                    <div class="flex">
+                        <p class="mr-4 text-white font-bold">Réponse N°4 :</p>
+                        <p class="bg-zinc-300 rounded-xl text-center px-6 py-1 mb-2 ml-2">{{ q_c_m.reponse54 }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+    <div class="flex justify-center mt-4">
+        <a class="rounded-xl py-1 mr-2 px-2 bg-[#163853] text-white font-bold" href="{{ path('app_gestion_q_c_m_play', {'id': q_c_m.id}) }}">Jouer</a>       
+        <a class="rounded-xl py-1 mr-2 px-2 bg-[#163853] text-white font-bold" href="{{ path('app_gestion_q_c_m_index') }}">Retour à la liste des QCM</a>
+        {% if is_granted('ROLE_ADMIN') %}
+            <a class="rounded-xl py-1 mr-2 px-2 bg-[#163853] text-white font-bold" href="{{ path('app_gestion_q_c_m_edit', {'id': q_c_m.id}) }}">Modifier</a>   
+            {{ include('gestion_qcm/_delete_form.html.twig') }}    
+        {% endif %}
+    </div>
+{% endblock %}
+
+
+
+

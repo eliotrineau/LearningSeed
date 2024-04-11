@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cours{% endblock %}
+
+{% block body %}
+    <div class="rounded-xl border-4 border-[#163853] mx-32 my-8 flex-col justify-center">
+        <p class="text-center">
+            Cours de {{cour.difficulte}}
+        </p>
+        <p class="text-center">
+            Matière : {{cour.matiere}}
+        </p>
+        <p class="text-center">
+            Nom du chapitre : {{cour.nom}}
+        </p>
+        <div class="flex mx-32 mt-8 justify-center bg-white text-black">
+            <p>
+                {{cour.contenu}}
+            </p>
+        </div>
+        <div class="flex justify-center mb-2">
+            <a class="rounded-xl py-1 px-2 font-bold bg-[#163853] text-white" href="{{ path('app_cours_download', {'id': cour.id}) }}">Télécharger le PDF du cours</a>
+        </div>
+    </div>
+    <div class="flex justify-center">
+    <a class="rounded-xl py-1 px-2 font-bold bg-[#163853] text-white" href="{{ path('app_cours_index') }}">Retour à la liste des cours</a>
+    </div>
+
+{% endblock %}

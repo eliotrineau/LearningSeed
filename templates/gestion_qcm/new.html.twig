@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau QCM{% endblock %}
+
+{% block body %}
+    <div class="flex justify-center">
+        <h1 class="font-bold text-white rounded-xl py-1 my-4 px-2 bg-[#163853]">Créer QCM</h1>
+    </div>
+    {{ include('gestion_qcm/_form.html.twig') }}
+
+        <div class="flex justify-center mx-96">
+        <a class="rounded-xl text-white mt-4 font-bold py-1 px-2 bg-[#163853]" href="{{ path('app_gestion_q_c_m_index') }}">Retour à la liste des QCM</a>
+    </div>
+{% endblock %}
