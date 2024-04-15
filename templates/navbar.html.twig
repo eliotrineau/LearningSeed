@@ -4,9 +4,9 @@
     </a>
     <div class="mt-1 font-bold">
         <a class="border-r border-white pr-2" href={{path("app_home")}}>Accueil</a>
+        {% if app.user %}
         <a class="ml-2 border-r border-white pr-2" href={{path("app_cours_index")}}>Cours</a>
         <a class="ml-2 border-r border-white pr-2" href={{path("app_gestion_q_c_m_index")}}>QCM</a>
-        {% if app.user %}
         <a class="ml-2 border-r border-white pr-2" href={{path("app_gestion_forum_index")}}>Forum</a>
         {% endif %}
         <a class="ml-2 border-r border-white pr-2" href={{path("app_login")}}>Connexion</a>
